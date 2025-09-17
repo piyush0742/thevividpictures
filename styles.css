@@ -72,38 +72,43 @@ nav {
 .destination-grid {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Increased gap for more space between items */
+    gap: 40px;
+    align-items: stretch; /* ✅ ensures all cards align to same height */
 }
 
 .destination {
-    max-width: 400px; /* Increased max-width for larger images */
+    max-width: 400px;
+    flex: 1; /* ✅ makes cards grow equally */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     text-align: center;
-    height: 100%;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
+/* Wrap image in a fixed box */
 .destination img {
     width: 100%;
-    height: 250px; /* Increased height for larger images */
-    object-fit: cover;
-    border-radius: 8px;
+    height: 300px;     /* ✅ fixed height */
+    object-fit: cover; /* ✅ crops consistently */
+    border-radius: 0;  /* remove border-radius here since .destination already has */
 }
 
+/* Text below stays consistent */
 .destination h3 {
-    margin: 10px 0; /* You can reduce this value */
-    margin-bottom: 0px; /* Set a smaller bottom margin */
+    margin: 10px 0 5px;
 }
 
 .destination p {
     font-size: 1rem;
     margin: 10px 0;
-    flex-grow: 1;
+    flex-grow: 1; /* ✅ pushes button down */
 }
 
 .button {
     margin-top: auto;
+    padding-bottom: 1rem;
 }
 
 .destination button {
