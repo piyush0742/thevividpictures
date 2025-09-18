@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston, USA - The Vivid Pictures</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .destination-header {
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('images/Boston.JPG');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .destination-header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .destination-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .city-info {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .city-info h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .city-info p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .highlight-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #3498db;
+        }
+
+        .highlight-item i {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .photo-gallery {
+            margin: 50px 0;
+        }
+
+        .photo-gallery h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #2980b9;
+        }
+
+        .back-button i {
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .destination-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .destination-header {
+                height: 40vh;
+            }
+            
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="destination-header">
+            <h1>Boston, USA</h1>
+        </section>
+
+        <div class="destination-content">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+
+            <div class="city-info">
+                <h2>About Boston</h2>
+                <p>Boston, the capital of Massachusetts, is a city where American history comes alive at every corner. Known as the "Cradle of Liberty," Boston played a pivotal role in the American Revolution and continues to be a beacon of education, innovation, and culture.</p>
+                
+                <p>Walking through Boston is like stepping through a living history book. The city seamlessly blends its rich colonial heritage with modern innovation, creating a unique atmosphere that captivates visitors from around the world. From the cobblestone streets of Beacon Hill to the bustling harbor, Boston offers an incredible mix of old-world charm and contemporary energy.</p>
+
+                <p>The city is renowned for its world-class universities, including Harvard and MIT, vibrant neighborhoods each with their own distinct character, and passionate sports culture. Whether you're exploring the Freedom Trail, enjoying fresh seafood in the North End, or catching a Red Sox game at Fenway Park, Boston never fails to inspire.</p>
+
+                <div class="highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-landmark"></i>
+                        <h3>Historic Architecture</h3>
+                        <p>Irish and British colonial influences throughout the city</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Educational Hub</h3>
+                        <p>Home to prestigious universities and institutions</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-ship"></i>
+                        <h3>Harbor City</h3>
+                        <p>Beautiful waterfront and maritime heritage</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Culinary Scene</h3>
+                        <p>Famous for clam chowder, lobster rolls, and more</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="photo-gallery">
+                <h2>Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/boston/freedom-trail.jpg" alt="Freedom Trail Boston">
+                        <div class="gallery-caption">
+                            <h3>Freedom Trail</h3>
+                            <p>Walk the path of American history through downtown Boston</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/boston/beacon-hill.jpg" alt="Beacon Hill Boston">
+                        <div class="gallery-caption">
+                            <h3>Beacon Hill</h3>
+                            <p>Historic cobblestone streets and Victorian architecture</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/boston/harbor.jpg" alt="Boston Harbor">
+                        <div class="gallery-caption">
+                            <h3>Boston Harbor</h3>
+                            <p>Scenic waterfront views and historic tea party site</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/boston/faneuil-hall.jpg" alt="Faneuil Hall Boston">
+                        <div class="gallery-caption">
+                            <h3>Faneuil Hall</h3>
+                            <p>The "Cradle of Liberty" and bustling marketplace</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/boston/north-end.jpg" alt="North End Boston">
+                        <div class="gallery-caption">
+                            <h3>North End</h3>
+                            <p>Italian heritage neighborhood with amazing cuisine</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/boston/back-bay.jpg" alt="Back Bay Boston">
+                        <div class="gallery-caption">
+                            <h3>Back Bay</h3>
+                            <p>Victorian brownstones and elegant tree-lined streets</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="follow.html">Follow Us On</a>
+            <a href="https://youtube.com/@_the_vivid_pictures?si=e8vkFU0Dz2jpuCNG" target="_blank">
+                <img src="images/youtube.jpeg" alt="YouTube" style="width: 24px; height: 24px;"> YouTube
+            </a>
+            <a href="https://www.instagram.com/_the_vivid_pictures?igsh=MWk4YWFvYmd4NTdhYw%3D%3D&utm_source=qr" target="_blank">
+                <img src="images/insta.jpeg" alt="Instagram" style="width: 24px; height: 24px;"> Instagram
+            </a>
+        </div>
+        <p>&copy; 2025 All rights reserved</p>
+    </footer>
+</body>
+</html>

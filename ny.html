@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York, USA - The Vivid Pictures</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .destination-header {
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('images/NY.JPG');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .destination-header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .destination-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .city-info {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .city-info h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .city-info p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .highlight-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .highlight-item i {
+            font-size: 2rem;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        .photo-gallery {
+            margin: 50px 0;
+        }
+
+        .photo-gallery h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 12px 25px;
+            background: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #c0392b;
+        }
+
+        .back-button i {
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .destination-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .destination-header {
+                height: 40vh;
+            }
+            
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="destination-header">
+            <h1>New York, USA</h1>
+        </section>
+
+        <div class="destination-content">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+
+            <div class="city-info">
+                <h2>About New York City</h2>
+                <p>New York City, the "Big Apple," is a global metropolis that never sleeps. With over 8 million residents and countless visitors, NYC is a melting pot of cultures, dreams, and endless possibilities. From the towering skyscrapers of Manhattan to the artistic neighborhoods of Brooklyn, every corner tells a unique story.</p>
+                
+                <p>The city is synonymous with ambition and achievement. Wall Street drives the global economy, Broadway stages world-class performances, and the fashion industry sets international trends. NYC's energy is infectious – from the yellow cabs navigating busy streets to the diverse street food vendors on every corner.</p>
+
+                <p>Beyond the hustle and bustle, New York offers incredible diversity in experiences. You can catch a world-class museum exhibition in the morning, enjoy a picnic in Central Park in the afternoon, and take in a Broadway show at night. The city's five boroughs each have their own distinct personality, making every visit a new adventure.</p>
+
+                <div class="highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-building"></i>
+                        <h3>Iconic Skyline</h3>
+                        <p>Home to Empire State Building, One World Trade, and more</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-theater-masks"></i>
+                        <h3>Broadway Shows</h3>
+                        <p>The theater capital of the world</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-palette"></i>
+                        <h3>World-Class Museums</h3>
+                        <p>MoMA, Met Museum, Guggenheim, and more</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-globe-americas"></i>
+                        <h3>Cultural Diversity</h3>
+                        <p>A melting pot of cultures from around the world</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="photo-gallery">
+                <h2>Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/newyork/times-square.jpg" alt="Times Square NYC">
+                        <div class="gallery-caption">
+                            <h3>Times Square</h3>
+                            <p>The dazzling heart of NYC that truly never sleeps</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/newyork/central-park.jpg" alt="Central Park NYC">
+                        <div class="gallery-caption">
+                            <h3>Central Park</h3>
+                            <p>An oasis of green in the concrete jungle</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/newyork/statue-liberty.jpg" alt="Statue of Liberty NYC">
+                        <div class="gallery-caption">
+                            <h3>Statue of Liberty</h3>
+                            <p>Symbol of freedom and democracy</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/newyork/brooklyn-bridge.jpg" alt="Brooklyn Bridge NYC">
+                        <div class="gallery-caption">
+                            <h3>Brooklyn Bridge</h3>
+                            <p>Iconic suspension bridge with stunning city views</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/newyork/manhattan-skyline.jpg" alt="Manhattan Skyline NYC">
+                        <div class="gallery-caption">
+                            <h3>Manhattan Skyline</h3>
+                            <p>The world's most famous urban landscape</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/newyork/high-line.jpg" alt="High Line NYC">
+                        <div class="gallery-caption">
+                            <h3>The High Line</h3>
+                            <p>Elevated park built on former railway tracks</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="follow.html">Follow Us On</a>
+            <a href="https://youtube.com/@_the_vivid_pictures?si=e8vkFU0Dz2jpuCNG" target="_blank">
+                <img src="images/youtube.jpeg" alt="YouTube" style="width: 24px; height: 24px;"> YouTube
+            </a>
+            <a href="https://www.instagram.com/_the_vivid_pictures?igsh=MWk4YWFvYmd4NTdhYw%3D%3D&utm_source=qr" target="_blank">
+                <img src="images/insta.jpeg" alt="Instagram" style="width: 24px; height: 24px;"> Instagram
+            </a>
+        </div>
+        <p>&copy; 2025 All rights reserved</p>
+    </footer>
+</body>
+</html>
