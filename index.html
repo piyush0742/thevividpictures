@@ -6,6 +6,136 @@
   <title>Travel Website</title>  
   <link rel="stylesheet" href="styles.css">  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .more-destinations {
+      margin: 40px 0;
+    }
+
+    .toggle-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 30px auto;
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .toggle-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .toggle-button i {
+      margin-left: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .toggle-button.active i {
+      transform: rotate(180deg);
+    }
+
+    .additional-destinations {
+      display: none;
+      opacity: 0;
+      transition: all 0.5s ease;
+      margin-top: 20px;
+    }
+
+    .additional-destinations.show {
+      display: block;
+      opacity: 1;
+    }
+
+    .additional-destinations h3 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+    }
+
+    .more-destination-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 20px 0;
+    }
+
+    .more-destination {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .more-destination:hover {
+      transform: translateY(-5px);
+    }
+
+    .more-destination img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .more-destination .main-body {
+      padding: 20px;
+    }
+
+    .more-destination .main-body h3 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .more-destination .main-body p {
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .more-destination .Test {
+      text-decoration: none;
+    }
+
+    .more-destination .Test button {
+      width: calc(100% - 40px);
+      padding: 12px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin: 0 20px 20px 20px;
+    }
+
+    .more-destination .Test button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .more-destination-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .toggle-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>  
 <body>  
   <header>  
@@ -26,7 +156,7 @@
 
       <!-- Cover Photo -->
       <section class="cover-photo">  
-        <img src="images/Coverphoto.jpg" alt="Cover Photo">  
+        <img src="images/Home/Coverphoto.jpg" alt="Cover Photo">  
       </section>    
 
       <!-- Featured Destinations -->
@@ -36,7 +166,7 @@
 
           <div class="destination">  
             <div class="main-body">
-              <img src="images/Boston.JPG" alt="Boston, USA">  
+              <img src="images/Home/Boston.JPG" alt="Boston, USA">  
               <h3>Boston, USA</h3>
               <p>Experience the beauty of Irish Architecture</p>  
             </div>
@@ -47,7 +177,7 @@
 
           <div class="destination">  
             <div class="main-body">
-              <img src="images/NY.JPG" alt="New York, USA">  
+              <img src="images/Home/NY.JPG" alt="New York, USA">  
               <h3>New York, USA</h3> 
               <p>The Big Apple</p> 
             </div> 
@@ -56,15 +186,58 @@
 
           <div class="destination">  
             <div class="main-body">
-              <img src="images/Rishikesh.jpg" alt="Rishikesh, India"> 
-              <h3>Rishikesh, India</h3>  
-              <p>Explore the Divine Spiritual land of India</p>  
+              <img src="images/Home/kedarkantha.jpg" alt="Kedarkantha, India"> 
+              <h3>Kedarkantha, India</h3>  
+              <p>Experience the breathtaking Himalayan trek peaks</p>  
             </div>
-            <a href="rishikesh.html" class="Test"><button>Learn More</button></a>
+            <a href="kedarkantha.html" class="Test"><button>Learn More</button></a>
           </div>  
 
         </div>  
-      </div> 
+      </div>
+
+      <!-- More Destinations Toggle Section -->
+      <div class="more-destinations">
+        <button class="toggle-button" onclick="toggleMoreDestinations()">
+          Explore More Destinations
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        
+        <div class="additional-destinations" id="additionalDestinations">
+          <h3>More Amazing Places</h3>
+          <div class="more-destination-grid">
+            
+            <div class="more-destination">
+              <div class="main-body">
+                <img src="images/Home/CC.jpg" alt="Cape Cod, USA">
+                <h3>Cape Cod, USA</h3>
+                <p>Pristine beaches and classic New England maritime heritage</p>
+              </div>
+              <a href="cape_cod.html" class="Test"><button>Learn More</button></a>
+            </div>
+
+            <div class="more-destination">
+              <div class="main-body">
+                <img src="images/Home/Rishikesh.jpg" alt="Rishikesh, India">
+                <h3>Rishikesh, India</h3>
+                <p>Yoga capital of the world, Ganges river, and adventure sports</p>
+              </div>
+              <a href="rishikesh.html" class="Test"><button>Learn More</button></a>
+            </div>
+
+            <div class="more-destination">
+              <div class="main-body">
+                <img src="images/Home/Rajasthan.jpg" alt="Rajasthan, India">
+                <h3>Rajasthan, India</h3>
+                <p>Golden deserts and vibrant Royal Heritage of the Land of Kings</p>
+              </div>
+              <a href="rajasthan.html" class="Test"><button>Learn More</button></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
   </main>  
 
@@ -72,13 +245,31 @@
     <div class="social-media">  
       <a href="follow.html">Follow Us On</a> 
       <a href="https://youtube.com/@_the_vivid_pictures?si=e8vkFU0Dz2jpuCNG" target="_blank">
-        <img src="images/youtube.jpeg" alt="YouTube" style="width: 24px; height: 24px;"> YouTube
+        <img src="images/Home/youtube.jpeg" alt="YouTube" style="width: 24px; height: 24px;"> YouTube
       </a>  
       <a href="https://www.instagram.com/_the_vivid_pictures?igsh=MWk4YWFvYmd4NTdhYw%3D%3D&utm_source=qr" target="_blank">
-        <img src="images/insta.jpeg" alt="Instagram" style="width: 24px; height: 24px;"> Instagram
+        <img src="images/Home/insta.jpeg" alt="Instagram" style="width: 24px; height: 24px;"> Instagram
       </a>    
     </div>  
     <p>&copy; 2025 All rights reserved</p>  
-  </footer>  
+  </footer>
+
+  <script>
+    function toggleMoreDestinations() {
+      const additionalDestinations = document.getElementById('additionalDestinations');
+      const toggleButton = document.querySelector('.toggle-button');
+      
+      if (additionalDestinations.classList.contains('show')) {
+        additionalDestinations.classList.remove('show');
+        toggleButton.classList.remove('active');
+        toggleButton.innerHTML = 'Explore More Destinations <i class="fas fa-chevron-down"></i>';
+      } else {
+        additionalDestinations.classList.add('show');
+        toggleButton.classList.add('active');
+        toggleButton.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+      }
+    }
+  </script>
+  
 </body>  
 </html>
